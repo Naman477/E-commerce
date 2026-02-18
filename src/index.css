@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Farmisian - Fresh & Organic Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Fresh Organic Color Palette */
+    --background: 40 20% 99%;
+    /* Slightly warmer, less yellow */
+    --foreground: 25 10% 15%;
+    /* Softer black */
+
+    --card: 40 20% 100%;
+    --card-foreground: 25 10% 15%;
+
+    --popover: 40 20% 100%;
+    --popover-foreground: 25 10% 15%;
+
+    /* Primary: Natural Leaf Green */
+    --primary: 125 35% 45%;
+    /* Slightly desaturated for realism */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft Moss */
+    --secondary: 90 25% 65%;
+    --secondary-foreground: 25 10% 15%;
+
+    /* Muted: Natural Linen */
+    --muted: 40 15% 95%;
+    --muted-foreground: 25 5% 45%;
+
+    /* Accent: Terracotta */
+    --accent: 18 35% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 40 10% 90%;
+    --input: 40 10% 90%;
+    --ring: 125 35% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors - Refined */
+    --fresh-green: 125 35% 45%;
+    --lime-green: 90 25% 65%;
+    --earth-brown: 28 20% 35%;
+    --cream: 40 15% 95%;
+    --warm-white: 40 20% 99%;
+    --leaf-dark: 125 40% 25%;
+    --harvest-orange: 25 80% 60%;
+    --berry-red: 350 70% 55%;
+
+    /* Organic Gradients */
+    --gradient-fresh: linear-gradient(135deg, hsl(125 35% 45%) 0%, hsl(135 30% 60%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(40 20% 99%) 0%, hsl(40 15% 95%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 20% 99%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(25 15% 15% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(25 15% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(25 15% 15% / 0.16);
+    --shadow-fresh: 0 8px 32px -8px hsl(122 39% 49% / 0.25);
+
+    --sidebar-background: 40 30% 96%;
+    --sidebar-foreground: 25 15% 25%;
+    --sidebar-primary: 122 39% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 25% 92%;
+    --sidebar-accent-foreground: 25 15% 25%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 122 39% 49%;
+  }
+
+  .dark {
+    --background: 25 20% 8%;
+    --foreground: 40 30% 94%;
+
+    --card: 25 18% 12%;
+    --card-foreground: 40 30% 94%;
+
+    --popover: 25 18% 12%;
+    --popover-foreground: 40 30% 94%;
+
+    --primary: 122 45% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 88 40% 40%;
+    --secondary-foreground: 40 30% 94%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 40 20% 65%;
+
+    --accent: 28 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 122 45% 45%;
+
+    --sidebar-background: 25 18% 10%;
+    --sidebar-foreground: 40 30% 90%;
+    --sidebar-primary: 122 45% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 15% 15%;
+    --sidebar-accent-foreground: 40 30% 90%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 122 45% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    /* Subtle Grain Texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .gradient-fresh {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, hsl(var(--warm-white)) 0%, hsl(var(--cream)) 100%);
+  }
+
+  .shadow-fresh {
+    box-shadow: 0 8px 32px -8px hsl(122 39% 49% / 0.25);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Scroll animations trigger */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
